@@ -22,6 +22,8 @@ public:
     
 private:
     Ui::ReparseDeleter *ui;
+private slots:
+    void on_btnRun_clicked();
 };
 
 #endif // REPARSEDELETER_H

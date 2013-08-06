@@ -7,27 +7,27 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>135</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>ReparseDeleter</string>
+   <string>Reparse Point (Symbolic Link) Deleter</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="btnRun">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>20</y>
+      <x>290</x>
+      <y>0</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Run!</string>
+     <string>Run</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="chkSecurityEssentials">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -39,8 +39,11 @@
     <property name="text">
      <string>Microsoft Security Essentials</string>
     </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_2">
+   <widget class="QCheckBox" name="chkDefender">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -51,6 +54,32 @@
     </property>
     <property name="text">
      <string>Windows Defender</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="chkCustom">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>70</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Custom</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>321</width>
+      <height>20</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -69,7 +98,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

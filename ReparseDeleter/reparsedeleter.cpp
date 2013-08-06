@@ -7,16 +7,32 @@ ReparseDeleter::ReparseDeleter(QWidget *parent) :
     ui(new Ui::ReparseDeleter)
 {
     ui->setupUi(this);
+    /*
     QLinkedList<QDir> dirs;
     dirs << QDir("C:\\Program Files\\Microsoft Security Client");
     dirs << QDir("C:\\Program Files\\Windows Defender");
     ReparseDeleter::DeleteAll(dirs);
+    */
 }
 
 ReparseDeleter::~ReparseDeleter()
 {
     delete ui;
 }
+void ReparseDeleter::on_btnRun_clicked() {
+    QLinkedList<QDir> dirs;
+    if (ui->chkSecurityEssentials->isChecked() == true) {
+        dirs << QDir("C:\\Program Files\\Microsoft Security Client");
+    }
+    if (ui->chkDefender->isChecked() == true) {
+            dirs << QDir("C:\\Program Files\\Windows Defender");
+    }
+    if (ui->chkCustom->isChecked() == true) {
+        dirs << QDir(ui->lineEdit->text());
+    }
+    ReparseDeleter::DeleteAll(dirs);
+}
+
 void ReparseDeleter::DeleteAll(QLinkedList<QDir> dirs) {
     QStringList sl;
     QLinkedList<QDir>::iterator i = dirs.begin();
